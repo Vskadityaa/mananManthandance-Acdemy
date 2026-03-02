@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Local Home</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f6fc;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: white;
+      border-bottom: 2px solid #ccc;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-icon {
+      width: 30px;
+      height: 30px;
+      background: black;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 50px;
+      background: url('your-background-image.jpg') no-repeat center center/cover;
+      color: black;
+    }
+
+    .hero-content {
+      max-width: 600px;
+    }
+
+    .hero-content h1 {
+      font-size: 56px;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .hero-content button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+
+    .hero-image {
+      max-width: 400px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <div class="logo-icon"></div>
+      Local Home
+    </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">ABOUT</a>
+      <a href="#">Book a Service</a>
+      <a href="#">LogIn</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Find happiness in a clean home</h1>
+      <p>with our professional cleaning services</p>
+      <button>LEARN MORE</button>
+    </div>
+    <div class="hero-image">
+      <img src="your-man-image.png" alt="Man holding house" />
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <script src="https://cdn.tailwindcss.com"></script>
+   
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <title>Local Home</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f6fc;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: rgb(255, 255, 255);
+      border-bottom: 2px solid #ccc;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-icon {
+      width: 30px;
+      height: 30px;
+      background: black;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+    }
+
+    .hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  height: 660px;
+  background: url('Local.png') no-repeat center center/cover;
+  color: black;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.1));
+  animation: moveGradient 8s ease-in-out infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-content,
+.hero-image {
+  position: relative;
+  z-index: 2; /* keeps text above overlay */
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+    .hero-content {
+      max-width: 570px;
+    }
+
+    .hero-content h1 {
+      font-size: 56px;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .hero-content button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+
+    .hero-image {
+      max-width: 400px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <div class="logo-icon"></div>
+      Local Home
+    </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">ABOUT</a>
+      <a href="#">Book a Service</a>
+      <a href="#">LogIn</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Find happiness in a clean home</h1>
+      <p>with our professional cleaning services</p>
+      <button>LEARN MORE</button>
+    </div>
+    <div class="hero-image">
+      <img src="" alt="" />
+    </div>
+  </section>
+
+
+   <!-- CATEGORY SECTION -->
+ <section class="py-24 px-6 md:px-16 bg-gray-50 w-full" id="categories">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-12" data-aos="fade-down">Explore Our Services</h2>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+        <!-- Cleaning -->
+        <div class="bg-gradient-to-r from-green-400 to-teal-500 text-white p-8 rounded-3xl shadow-lg hover:scale-105 transition transform duration-300 cursor-pointer" data-aos="fade-up">
+          <div class="text-5xl mb-3">🧹</div>
+          <h3 class="text-xl font-semibold">Cleaning</h3>
+          <p class="text-sm mt-2">Home & office deep cleaning</p>
+        </div>
+
+        <!-- Electrical -->
+        <div class="bg-gradient-to-r from-yellow-400 to-orange-500 text-white p-8 rounded-3xl shadow-lg hover:scale-105 transition transform duration-300 cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-5xl mb-3">⚡</div>
+          <h3 class="text-xl font-semibold">Electrical</h3>
+          <p class="text-sm mt-2">Installations, repair, wiring</p>
+        </div>
+
+        <!-- Plumbing -->
+        <div class="bg-gradient-to-r from-pink-400 to-red-500 text-white p-8 rounded-3xl shadow-lg hover:scale-105 transition transform duration-300 cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-5xl mb-3">🚰</div>
+          <h3 class="text-xl font-semibold">Plumbing</h3>
+          <p class="text-sm mt-2">Fix leaks, taps, pipes</p>
+        </div>
+
+        <!-- Painting -->
+        <div class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white p-8 rounded-3xl shadow-lg hover:scale-105 transition transform duration-300 cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+          <div class="text-5xl mb-3">🎨</div>
+          <h3 class="text-xl font-semibold">Painting</h3>
+          <p class="text-sm mt-2">Interior & exterior work</p>
+        </div>
+
+        <!-- AC Repair -->
+        <div class="bg-gradient-to-r from-blue-500 to-sky-400 text-white p-8 rounded-3xl shadow-lg hover:scale-105 transition transform duration-300 cursor-pointer" data-aos="fade-up" data-aos-delay="400">
+          <div class="text-5xl mb-3">❄️</div>
+          <h3 class="text-xl font-semibold">AC Repair</h3>
+          <p class="text-sm mt-2">Cooling issues, servicing</p>
+        </div>
+
+        <!-- Carpentry -->
+        <div class="bg-gradient-to-r from-amber-500 to-yellow-400 text-white p-8 rounded-3xl shadow-lg hover:scale-105 transition transform duration-300 cursor-pointer" data-aos="fade-up" data-aos-delay="500">
+          <div class="text-5xl mb-3">🪚</div>
+          <h3 class="text-xl font-semibold">Carpentry</h3>
+          <p class="text-sm mt-2">Furniture, doors, repairs</p>
+        </div>
+
+        <!-- Pest Control -->
+        <div class="bg-gradient-to-r from-red-500 to-orange-500 text-white p-8 rounded-3xl shadow-lg hover:scale-105 transition transform duration-300 cursor-pointer" data-aos="fade-up" data-aos-delay="600">
+          <div class="text-5xl mb-3">🐜</div>
+          <h3 class="text-xl font-semibold">Pest Control</h3>
+          <p class="text-sm mt-2">Termite, cockroach, bugs</p>
+        </div>
+
+        <!-- Home Appliances -->
+        <div class="bg-gradient-to-r from-cyan-400 to-blue-500 text-white p-8 rounded-3xl shadow-lg hover:scale-105 transition transform duration-300 cursor-pointer" data-aos="fade-up" data-aos-delay="700">
+          <div class="text-5xl mb-3">🔌</div>
+          <h3 class="text-xl font-semibold">Appliance Repair</h3>
+          <p class="text-sm mt-2">Washing machine, fridge, etc.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
+
+   <!-- HOME LANDING SECTION -->
+<section class="relative h-screen bg-cover bg-center flex items-center justify-center" style="background-image: url('Local.png');">
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 text-center text-white max-w-3xl px-6">
+    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+      Your Trusted Local Service Partner
+    </h1>
+    <p class="text-lg md:text-2xl mb-8">
+      Book reliable home services like cleaning, plumbing, electrical & more—anytime, anywhere.
+    </p>
+    <a href="#services" class="bg-white text-black px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 transition">
+      Explore Our Services
+    </a>
+  </div>
+</section>
+
+<!-- FEATURES OVERVIEW SECTION -->
+<section class="py-20 bg-gray-100 text-center">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-800">What We Offer</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <!-- Card 1 -->
+      <div class="bg-white shadow-md rounded-2xl p-8 hover:shadow-xl transition">
+        <div class="text-5xl mb-4">🧼</div>
+        <h3 class="text-xl font-semibold mb-2">Cleaning Services</h3>
+        <p class="text-gray-600 text-sm">Deep, routine or on-demand cleaning by trained professionals.</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="bg-white shadow-md rounded-2xl p-8 hover:shadow-xl transition">
+        <div class="text-5xl mb-4">🔧</div>
+        <h3 class="text-xl font-semibold mb-2">Plumbing & Repairs</h3>
+        <p class="text-gray-600 text-sm">Fix leaks, blockages or install new plumbing—hassle free.</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="bg-white shadow-md rounded-2xl p-8 hover:shadow-xl transition">
+        <div class="text-5xl mb-4">⚡</div>
+        <h3 class="text-xl font-semibold mb-2">Electrical Work</h3>
+        <p class="text-gray-600 text-sm">Need a fan, switchboard or appliance setup? We’ve got you.</p>
+      </div>
+    </div>
+
+    <div class="mt-12">
+      <a href="#book" class="inline-block bg-black text-white px-8 py-4 rounded-full text-lg hover:bg-gray-800 transition">
+        Book a Service Now
+      </a>
+    </div>
+  </div>
+</section>
+<section class="py-20 bg-gray-100 text-center">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-12 text-gray-800">Why Choose Us</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition" data-aos="zoom-in">
+          <div class="text-5xl mb-4">💼</div>
+          <h3 class="text-xl font-semibold mb-2">Verified Professionals</h3>
+          <p class="text-gray-600 text-sm">All service providers are background checked and certified.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition" data-aos="zoom-in" data-aos-delay="100">
+          <div class="text-5xl mb-4">🕐</div>
+          <h3 class="text-xl font-semibold mb-2">On-Time Services</h3>
+          <p class="text-gray-600 text-sm">Punctual arrivals with real-time tracking and updates.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition" data-aos="zoom-in" data-aos-delay="200">
+          <div class="text-5xl mb-4">📞</div>
+          <h3 class="text-xl font-semibold mb-2">Support Anytime</h3>
+          <p class="text-gray-600 text-sm">24/7 customer support via chat, email or call.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+  
+
+
+</body>
+</html>

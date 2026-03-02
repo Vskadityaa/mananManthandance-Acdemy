@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register Form</title>
+</head>
+<body style="font-family: Arial, sans-serif; text-align: center; padding-top: 50px;">
+
+  <h1>Register</h1>
+
+  <form id="registerForm">
+    <input type="text" name="name" placeholder="Name" required><br><br>
+    <input type="email" name="email" placeholder="Email" required><br><br>
+    <input type="text" name="phone" placeholder="Phone" required><br><br>
+    <input type="text" name="address" placeholder="Address" required><br><br>
+    <input type="text" name="style" placeholder="Style" required><br><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="responseMessage"></p>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyd9y5ik1oPivUcCtr7H8hE4Mbm9lMhcCp0TeNGINJi16KRYTDulx0Op_6wihSwDLc8/exec'; // <-- your correct Google Apps Script URL
+
+    const form = document.getElementById('registerForm');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();  // Prevent the form from reloading the page
+
+      const formData = new FormData(form); // Collect form data
+
+      fetch(scriptURL, {
+        method: 'POST',
+        mode: 'no-cors',  // Use 'no-cors' to bypass CORS restrictions during testing
+        body: formData     // Send form data
+      })
+      .then(() => {
+        document.getElementById('responseMessage').innerText = '✅ Registration Successful!';
+        form.reset();  // Reset the form fields
+      })
+      .catch(error => {
+        document.getElementById('responseMessage').innerText = '❌ Error submitting the form!';
+        console.error('Error!', error.message);
+      });
+    });
+  </script>
+
+</body>
+</html>

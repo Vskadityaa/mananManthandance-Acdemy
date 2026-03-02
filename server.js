@@ -1,53 +1,71 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const XLSX = require('xlsx');
+
 const fs = require('fs');
 const path = require('path');
 
 const app = express();
 const PORT = 3000;
 
-// Define the path for the Excel file
-const excelFile = path.join(__dirname, 'registrations.xlsx');
+// === Google Sheets Config ===
+const credentialsPath = path.join(__dirname, 'credentials.json'); // Make sure this file exists
+const spreadsheetId = '1Te61XXUBMHS5jAR7cfmhQsAKieWutKyaFgqzN8mxY00'; // Your Sheet ID
+const sheetName = 'sheet1'; // Change if your sheet tab is named differently
+const SCOPES = ['https://www.googleapis.com/auth/spreadsheets'];
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public')); // Serve static files from 'public' folder
+app.use(express.static('public'));
 
-// POST route to save form data
-app.post('/register', (req, res) => {
+// Google Auth Setup
+async function authenticate() {
+  const credentials = JSON.parse(fs.readFileSync(credentialsPath));
+  const { client_email, private_key } = credentials;
+
+  const auth = new google.auth.JWT(client_email, null, private_key, SCOPES);
+  await auth.authorize();
+  return auth;
+}
+
+// Form Submission Route
+app.post('/register', async (req, res) => {
   const { name, email, phone, address, style } = req.body;
-  console.log("Received data:", req.body);
+  console.log("Form received:", name, email, phone, address, style);
 
-  let data = [];
+  try {
+    const auth = await authenticate();
+    const sheets = google.sheets({ version: 'v4', auth });
 
-  // Read existing data if file exists
-  if (fs.existsSync(excelFile)) {
-    const workbook = XLSX.readFile(excelFile);
-    const sheet = workbook.Sheets[workbook.SheetNames[0]];
-    data = XLSX.utils.sheet_to_json(sheet);
+    await sheets.spreadsheets.values.append({
+      spreadsheetId,
+      range: `${sheetName}!A:E`,
+      valueInputOption: 'RAW',
+      resource: {
+        values: [[name, email, phone, address, style]],
+      },
+    });
+
+    res.send(`
+      <h2 style="text-align:center;font-family:sans-serif;">Thank you for registering!</h2>
+      <p style="text-align:center;">Redirecting you back...</p>
+      <script>
+        setTimeout(() => {
+          window.location.href = '/';
+        }, 3000);
+      </script>
+    `);
+  } catch (err) {
+    console.error('Error saving to sheet:', err);
+    res.status(500).send('Error saving registration data.');
   }
-
-  // Add new registration
-  data.push({
-    Name: name,
-    Email: email,
-    Phone: phone,
-    Address: address,
-    DanceStyle: style
-  });
-
-  // Write updated data to Excel
-  const newWB = XLSX.utils.book_new();
-  const newWS = XLSX.utils.json_to_sheet(data);
-  XLSX.utils.book_append_sheet(newWB, newWS, "Registrations");
-  XLSX.writeFile(newWB, excelFile);
-
-  // Redirect to index.html after registration
-  res.redirect('/index.html');
 });
 
-// Start the server
+// Serve the Form
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'register.html'));
+});
+
+// Start Server
 app.listen(PORT, () => {
   console.log(`🚀 Server running at http://localhost:${PORT}/`);
 });

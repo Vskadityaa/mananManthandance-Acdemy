@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — Manan Manthan Dance Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body class="dashboard-body">
+  <aside class="dashboard-sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="sidebar-logo">
+        <img src="../public/m1.jpg" alt="Manan Manthan" class="sidebar-logo-img" />
+      </a>
+      <span class="sidebar-title">Dashboard</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#" class="sidebar-link active" data-panel="overview">
+        <span class="sidebar-icon">📊</span>
+        <span>Overview</span>
+      </a>
+      <a href="#" class="sidebar-link" data-panel="classes">
+        <span class="sidebar-icon">🩰</span>
+        <span>Classes</span>
+      </a>
+      <a href="#" class="sidebar-link" data-panel="schedule">
+        <span class="sidebar-icon">📅</span>
+        <span>Schedule</span>
+      </a>
+      <a href="#" class="sidebar-link" data-panel="students">
+        <span class="sidebar-icon">👥</span>
+        <span>Students</span>
+      </a>
+      <a href="#" class="sidebar-link" data-panel="instructors">
+        <span class="sidebar-icon">🎭</span>
+        <span>Instructors</span>
+      </a>
+      <a href="#" class="sidebar-link" data-panel="gallery">
+        <span class="sidebar-icon">🖼️</span>
+        <span>Gallery</span>
+      </a>
+      <a href="#" class="sidebar-link" data-panel="registrations">
+        <span class="sidebar-icon">📝</span>
+        <span>Registrations</span>
+      </a>
+      <a href="#" class="sidebar-link" data-panel="payments">
+        <span class="sidebar-icon">💳</span>
+        <span>Payments</span>
+      </a>
+      <a href="#" class="sidebar-link" data-panel="settings">
+        <span class="sidebar-icon">⚙️</span>
+        <span>Settings</span>
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="index.html" class="sidebar-back">← Back to site</a>
+    </div>
+  </aside>
+
+  <main class="dashboard-main">
+    <header class="dashboard-topbar">
+      <h1 class="dashboard-page-title" id="panelTitle">Overview</h1>
+      <div class="topbar-actions">
+        <input type="search" class="dashboard-search" placeholder="Search..." />
+        <button class="topbar-btn" title="Notifications">🔔</button>
+        <div class="topbar-user">
+          <span>Admin</span>
+          <div class="user-avatar">A</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="dashboard-content">
+      <!-- Overview Panel -->
+      <section class="dashboard-panel active" id="panel-overview">
+        <div class="stats-row">
+          <div class="stat-card">
+            <span class="stat-value">524</span>
+            <span class="stat-label">Total Students</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">12</span>
+            <span class="stat-label">Dance Styles</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">15</span>
+            <span class="stat-label">Instructors</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">48</span>
+            <span class="stat-label">Classes / Week</span>
+          </div>
+        </div>
+        <div class="dashboard-grid-2">
+          <div class="card">
+            <h3>Recent Activity</h3>
+            <ul class="activity-list">
+              <li>New registration — Priya M. (Hip-Hop)</li>
+              <li>Class completed — Contemporary, Batch 4</li>
+              <li>Payment received — ₹2,500</li>
+              <li>New instructor joined — Maya Chen</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Upcoming Classes Today</h3>
+            <ul class="activity-list">
+              <li>9:00 AM — Ballet Basics</li>
+              <li>11:00 AM — Contemporary</li>
+              <li>6:00 PM — Hip-Hop</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Classes Panel -->
+      <section class="dashboard-panel" id="panel-classes">
+        <div class="card card-table-wrap">
+          <div class="card-header">
+            <h3>All Classes</h3>
+            <button class="btn-add">+ Add Class</button>
+          </div>
+          <table class="dashboard-table">
+            <thead>
+              <tr><th>Class Name</th><th>Style</th><th>Level</th><th>Instructor</th><th>Slots</th><th>Action</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Ballet Basics</td><td>Ballet</td><td>Beginner</td><td>Maya Chen</td><td>15/20</td><td><button class="btn-sm">Edit</button></td></tr>
+              <tr><td>Hip-Hop Groove</td><td>Hip-Hop</td><td>All</td><td>DJ Rivers</td><td>18/20</td><td><button class="btn-sm">Edit</button></td></tr>
+              <tr><td>Contemporary Flow</td><td>Contemporary</td><td>Intermediate</td><td>Maya Chen</td><td>12/15</td><td><button class="btn-sm">Edit</button></td></tr>
+              <tr><td>Salsa Nights</td><td>Salsa</td><td>Beginner</td><td>Elena Rosa</td><td>10/15</td><td><button class="btn-sm">Edit</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Schedule Panel -->
+      <section class="dashboard-panel" id="panel-schedule">
+        <div class="card">
+          <h3>Weekly Schedule</h3>
+          <div class="schedule-grid">
+            <div class="schedule-day"><strong>Mon</strong><div class="schedule-slots">9AM Ballet · 11AM Contemporary · 6PM Hip-Hop</div></div>
+            <div class="schedule-day"><strong>Tue</strong><div class="schedule-slots">10AM Salsa · 5:30PM Jazz · 7PM Bollywood</div></div>
+            <div class="schedule-day"><strong>Wed</strong><div class="schedule-slots">9:30AM Ballet · 4PM Hip-Hop Kids · 6:30PM Contemporary</div></div>
+            <div class="schedule-day"><strong>Thu</strong><div class="schedule-slots">10AM Salsa · 6PM Hip-Hop · 7:30PM Jazz</div></div>
+            <div class="schedule-day"><strong>Fri</strong><div class="schedule-slots">9AM Ballet · 5PM Bollywood · 6:30PM Contemporary</div></div>
+            <div class="schedule-day"><strong>Sat</strong><div class="schedule-slots">10AM Workshop · 12PM Salsa Social · 2PM Hip-Hop</div></div>
+          </div>
+          <button class="btn-primary">Edit Schedule</button>
+        </div>
+      </section>
+
+      <!-- Students Panel -->
+      <section class="dashboard-panel" id="panel-students">
+        <div class="card card-table-wrap">
+          <div class="card-header">
+            <h3>Students</h3>
+            <button class="btn-add">+ Add Student</button>
+          </div>
+          <table class="dashboard-table">
+            <thead>
+              <tr><th>Name</th><th>Email</th><th>Class</th><th>Joined</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Priya M.</td><td>priya@email.com</td><td>Hip-Hop</td><td>Jan 2025</td><td><span class="badge badge-success">Active</span></td></tr>
+              <tr><td>Alex K.</td><td>alex@email.com</td><td>Contemporary</td><td>Dec 2024</td><td><span class="badge badge-success">Active</span></td></tr>
+              <tr><td>Maria L.</td><td>maria@email.com</td><td>Salsa</td><td>Nov 2024</td><td><span class="badge badge-success">Active</span></td></tr>
+              <tr><td>Rahul S.</td><td>rahul@email.com</td><td>Bollywood</td><td>Oct 2024</td><td><span class="badge badge-muted">Paused</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Instructors Panel -->
+      <section class="dashboard-panel" id="panel-instructors">
+        <div class="instructor-cards">
+          <div class="instructor-card-dash">
+            <img src="../public/m11.jpg" alt="Maya Chen" />
+            <div><strong>Maya Chen</strong><p>Contemporary & Ballet</p></div>
+            <button class="btn-sm">Edit</button>
+          </div>
+          <div class="instructor-card-dash">
+            <img src="../public/m12.jpg" alt="DJ Rivers" />
+            <div><strong>DJ Rivers</strong><p>Hip-Hop & Street</p></div>
+            <button class="btn-sm">Edit</button>
+          </div>
+          <div class="instructor-card-dash">
+            <img src="../public/m13.jpg" alt="Elena Rosa" />
+            <div><strong>Elena Rosa</strong><p>Salsa & Latin</p></div>
+            <button class="btn-sm">Edit</button>
+          </div>
+        </div>
+        <button class="btn-add">+ Add Instructor</button>
+      </section>
+
+      <!-- Gallery Panel -->
+      <section class="dashboard-panel" id="panel-gallery">
+        <div class="card">
+          <div class="card-header">
+            <h3>Gallery</h3>
+            <button class="btn-add">+ Upload</button>
+          </div>
+          <div class="gallery-grid-dash">
+            <div class="gallery-thumb"><img src="../public/m5.jpg" alt="" /><button class="thumb-delete">×</button></div>
+            <div class="gallery-thumb"><img src="../public/15.jpg" alt="" /><button class="thumb-delete">×</button></div>
+            <div class="gallery-thumb"><img src="../public/19.jpg" alt="" /><button class="thumb-delete">×</button></div>
+            <div class="gallery-thumb"><img src="../public/m2.jpg" alt="" /><button class="thumb-delete">×</button></div>
+            <div class="gallery-thumb"><img src="../public/m3.jpg" alt="" /><button class="thumb-delete">×</button></div>
+            <div class="gallery-thumb"><img src="../public/m4.jpg" alt="" /><button class="thumb-delete">×</button></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Registrations Panel -->
+      <section class="dashboard-panel" id="panel-registrations">
+        <div class="card card-table-wrap">
+          <div class="card-header">
+            <h3>Recent Registrations</h3>
+            <button class="btn-add">Export</button>
+          </div>
+          <table class="dashboard-table">
+            <thead>
+              <tr><th>Date</th><th>Name</th><th>Class</th><th>Contact</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>02 Mar 2025</td><td>Neha R.</td><td>Hip-Hop</td><td>+91 98xxx</td><td><span class="badge badge-pending">Pending</span></td></tr>
+              <tr><td>01 Mar 2025</td><td>Vikram P.</td><td>Ballet</td><td>+91 99xxx</td><td><span class="badge badge-success">Confirmed</span></td></tr>
+              <tr><td>28 Feb 2025</td><td>Anita S.</td><td>Salsa</td><td>+91 97xxx</td><td><span class="badge badge-success">Confirmed</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Payments Panel -->
+      <section class="dashboard-panel" id="panel-payments">
+        <div class="stats-row">
+          <div class="stat-card">
+            <span class="stat-value">₹1,24,500</span>
+            <span class="stat-label">This Month</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">₹4,89,200</span>
+            <span class="stat-label">This Quarter</span>
+          </div>
+        </div>
+        <div class="card card-table-wrap">
+          <h3>Recent Payments</h3>
+          <table class="dashboard-table">
+            <thead>
+              <tr><th>Date</th><th>Student</th><th>Amount</th><th>Mode</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>02 Mar 2025</td><td>Priya M.</td><td>₹2,500</td><td>UPI</td></tr>
+              <tr><td>01 Mar 2025</td><td>Alex K.</td><td>₹3,000</td><td>Card</td></tr>
+              <tr><td>28 Feb 2025</td><td>Maria L.</td><td>₹2,500</td><td>Cash</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Settings Panel -->
+      <section class="dashboard-panel" id="panel-settings">
+        <div class="card">
+          <h3>Academy Settings</h3>
+          <form class="settings-form">
+            <label>Academy Name <input type="text" value="Manan Manthan Dance Academy" /></label>
+            <label>Contact Email <input type="email" value="hello@mananmanthan.com" /></label>
+            <label>Phone <input type="tel" value="+1 (555) 123-4567" /></label>
+            <label>Address <textarea rows="2">123 Dance Street, Studio City</textarea></label>
+            <label class="setting-toggle"><input type="checkbox" checked /> Accept online registrations</label>
+            <label class="setting-toggle"><input type="checkbox" checked /> Send email notifications</label>
+            <button type="submit" class="btn-primary">Save Settings</button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
